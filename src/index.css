@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  color: #212121;
+  background: #ffffff;
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-[1280px] mx-auto px-6 lg:px-10;
+  }
+}
+
+/* CTA 3D animations */
+@keyframes cta-float {
+  0%, 100% { transform: translateY(0) rotateY(-12deg) rotateX(4deg); }
+  50% { transform: translateY(-14px) rotateY(-12deg) rotateX(4deg); }
+}
+
+@keyframes cta-icon-float {
+  0%, 100% { transform: translateY(0) translateZ(20px) rotateX(8deg); }
+  50% { transform: translateY(-8px) translateZ(30px) rotateX(8deg); }
+}
+
+@keyframes cta-glow-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.08); }
+}
+
+@keyframes cta-sparkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 0.6; transform: scale(1.2) rotate(180deg); }
+}
+
+@keyframes cta-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.cta-scene {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.cta-banner-inner {
+  transform-style: preserve-3d;
+  transform: rotateX(2deg);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cta-scene:hover .cta-banner-inner {
+  transform: rotateX(0deg);
+}
+
+.cta-robot-wrap {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  animation: cta-float 4s ease-in-out infinite;
+}
+
+.cta-robot-wrap svg {
+  filter: drop-shadow(0 20px 30px rgba(59, 130, 246, 0.25));
+}
+
+.cta-icon-3d {
+  transform-style: preserve-3d;
+  animation: cta-icon-float 3s ease-in-out infinite;
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-icon-3d:hover {
+  transform: translateY(-4px) translateZ(40px) rotateX(12deg) scale(1.08);
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 0.15),
+    0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cta-icon-3d-delay-0 { animation-delay: 0s; }
+.cta-icon-3d-delay-1 { animation-delay: 0.6s; }
+.cta-icon-3d-delay-2 { animation-delay: 1.2s; }
+
+.cta-btn-3d {
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 0 #071028, 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.cta-btn-3d:hover {
+  transform: translateY(-3px) translateZ(8px);
+  box-shadow: 0 7px 0 #071028, 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.cta-btn-3d:active {
+  transform: translateY(2px) translateZ(0);
+  box-shadow: 0 1px 0 #071028, 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-gold-text {
+  background: linear-gradient(90deg, #FBBF24 0%, #FDE68A 40%, #FBBF24 60%, #F59E0B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cta-shimmer 4s linear infinite;
+}
+
+.cta-glow-orb {
+  animation: cta-glow-pulse 5s ease-in-out infinite;
+}
+
+.cta-sparkle {
+  animation: cta-sparkle 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-robot-wrap,
+  .cta-icon-3d,
+  .cta-glow-orb,
+  .cta-sparkle,
+  .cta-gold-text {
+    animation: none;
+  }
+  .cta-banner-inner,
+  .cta-btn-3d,
+  .cta-icon-3d {
+    transition: none;
+  }
+}
+
