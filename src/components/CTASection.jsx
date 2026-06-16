@@ -34,7 +34,7 @@ function RobotIllustration() {
   );
 }
 
-function SideIcons() {
+function SideIcons({ horizontal = false }) {
   const icons = [
     { color: 'bg-amber-400', content: '🏆' },
     { color: 'bg-violet-500', content: '< />', isCode: true },
@@ -42,16 +42,16 @@ function SideIcons() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-5" style={{ perspective: '600px' }}>
+    <div className={`flex ${horizontal ? 'flex-row gap-4' : 'flex-col'} items-center gap-4 sm:gap-5`} style={{ perspective: '600px' }}>
       {icons.map((item, i) => (
-        <div key={i} className="flex flex-col items-center gap-2">
+        <div key={i} className={`flex ${horizontal ? 'flex-row' : 'flex-col'} items-center gap-2`}>
           <div
-            className={`cta-icon-3d cta-icon-3d-delay-${i} w-12 h-12 ${item.color} rounded-xl flex items-center justify-center text-white ${item.isCode ? 'text-xs font-bold tracking-tighter' : 'text-lg'}`}
+            className={`cta-icon-3d cta-icon-3d-delay-${i} w-11 h-11 sm:w-12 sm:h-12 ${item.color} rounded-xl flex items-center justify-center text-white ${item.isCode ? 'text-xs font-bold tracking-tighter' : 'text-lg'}`}
           >
             {item.content}
           </div>
-          {i < icons.length - 1 && (
-            <div className="w-px h-5 border-l-2 border-dashed border-violet-400/40" />
+          {!horizontal && i < icons.length - 1 && (
+            <div className="w-px h-4 sm:h-5 border-l-2 border-dashed border-violet-400/40" />
           )}
         </div>
       ))}
@@ -61,9 +61,9 @@ function SideIcons() {
 
 export default function CTASection() {
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="bg-white py-10 sm:py-12 lg:py-16">
       <div className="container-main cta-scene">
-        <div className="cta-banner-inner relative rounded-[20px] overflow-hidden shadow-[0_24px_60px_rgba(5,19,54,0.35)]">
+        <div className="cta-banner-inner relative rounded-2xl sm:rounded-[20px] overflow-hidden shadow-[0_16px_40px_rgba(5,19,54,0.3)] sm:shadow-[0_24px_60px_rgba(5,19,54,0.35)]">
           {/* Background gradient */}
           <div
             className="absolute inset-0"
@@ -88,44 +88,48 @@ export default function CTASection() {
           ))}
 
           {/* Content grid */}
-          <div className="relative px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
-            <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_100px] xl:grid-cols-[180px_1fr_120px] gap-10 lg:gap-8 items-center">
+          <div className="relative px-4 py-8 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_100px] xl:grid-cols-[180px_1fr_120px] gap-8 sm:gap-10 lg:gap-8 items-center">
 
-              {/* Left — robot */}
               <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
                 <div className="cta-robot-wrap">
                   <RobotIllustration />
                 </div>
               </div>
 
-              {/* Centre — content */}
               <div className="order-1 lg:order-2 text-center" style={{ transform: 'translateZ(20px)' }}>
-                <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-extrabold text-white leading-tight">
+                <h2 className="text-[22px] sm:text-[32px] lg:text-[36px] font-extrabold text-white leading-tight">
                   Ready to Build Your
                   <br />
                   <span className="cta-gold-text">First AI Agent?</span>
                 </h2>
 
-                <p className="text-white/60 text-[14px] italic mt-4 mb-8 leading-relaxed max-w-[480px] mx-auto">
+                <p className="text-white/60 text-[13px] sm:text-[14px] italic mt-3 sm:mt-4 mb-6 sm:mb-8 leading-relaxed max-w-[480px] mx-auto px-2">
                   Start free. No credit card. No setup. Just curiosity, a name, and an idea.
                 </p>
 
-                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2.5 sm:gap-3 px-2 sm:px-0">
                   {buttons.map((label) => (
-                    <button key={label} type="button" className="cta-btn-3d bg-[#0f2048] border border-[#1e3a6e] text-[#FBBF24] px-5 py-2.5 rounded-lg font-bold text-[11px] uppercase tracking-wide">
+                    <button key={label} type="button" className="cta-btn-3d w-full sm:w-auto bg-[#0f2048] border border-[#1e3a6e] text-[#FBBF24] px-4 sm:px-5 py-2.5 rounded-lg font-bold text-[10px] sm:text-[11px] uppercase tracking-wide">
                       {label}
                     </button>
                   ))}
                 </div>
 
-                <p className="mt-8 text-white/40 text-[12px]">
-                  playground@skillzza.com&nbsp;&nbsp;|&nbsp;&nbsp;www.skillzza.com/playground
+                <p className="mt-6 sm:mt-8 text-white/40 text-[10px] sm:text-[12px] leading-relaxed">
+                  <span className="block sm:inline">playground@skillzza.com</span>
+                  <span className="hidden sm:inline">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                  <span className="block sm:inline mt-1 sm:mt-0">www.skillzza.com/playground</span>
                 </p>
               </div>
 
-              {/* Right — icons */}
               <div className="order-3 hidden lg:flex justify-center lg:justify-start">
                 <SideIcons />
+              </div>
+
+              {/* Mobile/tablet icons row */}
+              <div className="order-3 lg:hidden flex justify-center pt-2 border-t border-white/10">
+                <SideIcons horizontal />
               </div>
             </div>
           </div>

@@ -18,7 +18,19 @@ body {
 
 @layer components {
   .container-main {
-    @apply max-w-[1280px] mx-auto px-6 lg:px-10;
+    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10;
+  }
+
+  .section-heading {
+    @apply text-[24px] sm:text-[28px] lg:text-[36px] font-extrabold leading-tight;
+  }
+
+  .btn-primary {
+    @apply w-full sm:w-auto text-center bg-brand-purple text-white px-5 sm:px-6 py-2.5 rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-brand-purple-dark transition-colors;
+  }
+
+  .btn-outline {
+    @apply w-full sm:w-auto text-center border border-brand-purple text-brand-purple px-5 py-2.5 rounded-lg text-[12px] sm:text-[13px] font-semibold hover:bg-brand-purple/5 transition-colors;
   }
 }
 
@@ -59,8 +71,16 @@ body {
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.cta-scene:hover .cta-banner-inner {
-  transform: rotateX(0deg);
+@media (min-width: 1024px) {
+  .cta-scene:hover .cta-banner-inner {
+    transform: rotateX(0deg);
+  }
+}
+
+@media (max-width: 1023px) {
+  .cta-banner-inner {
+    transform: none;
+  }
 }
 
 .cta-robot-wrap {

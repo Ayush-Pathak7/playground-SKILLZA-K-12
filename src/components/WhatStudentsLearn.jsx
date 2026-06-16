@@ -54,10 +54,10 @@ const skills = [
 
 export default function WhatStudentsLearn() {
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="container-main">
-        <div className="text-center mb-12 lg:mb-14">
-          <h2 className="text-[32px] lg:text-[38px] font-extrabold text-[#111827] leading-tight">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
+          <h2 className="section-heading text-[#111827]">
             What Students Learn –{' '}
             <span className="text-brand-purple">Without Realising It</span>
           </h2>

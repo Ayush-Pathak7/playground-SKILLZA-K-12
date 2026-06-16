@@ -19,9 +19,9 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A0066] py-14 lg:py-16">
+    <footer className="bg-[#1A0066] py-10 sm:py-14 lg:py-16">
       <div className="container-main">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-10">
           {/* Brand */}
           <div>
             <a href="#" className="text-[22px] font-bold mb-4 inline-block">
@@ -92,11 +92,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-[12px]">© 2026 Skillzza K-12. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+        <div className="border-t border-white/10 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-white/40 text-[11px] sm:text-[12px]">© 2026 Skillzza K-12. All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link) => (
-              <a key={link} href="#" className="text-white/40 text-[12px] hover:text-white transition-colors">
+              <a key={link} href="#" className="text-white/40 text-[11px] sm:text-[12px] hover:text-white transition-colors">
                 {link}
               </a>
             ))}

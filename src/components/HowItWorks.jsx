@@ -63,13 +63,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="container-main">
-        <div className="text-center mb-12 lg:mb-14">
-          <span className="inline-block bg-[#EFF6FF] text-[#3B82F6] text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
+          <span className="inline-block bg-[#EFF6FF] text-[#3B82F6] text-[10px] sm:text-[11px] font-bold px-3 sm:px-4 py-1.5 rounded-full uppercase tracking-widest">
             How It Works
           </span>
-          <h2 className="text-[32px] lg:text-[38px] font-extrabold text-[#111827] mt-5 leading-tight">
+          <h2 className="section-heading text-[#111827] mt-4 sm:mt-5">
             From Curiosity to Creation in{' '}
             <span className="text-brand-purple">4 Steps</span>
           </h2>

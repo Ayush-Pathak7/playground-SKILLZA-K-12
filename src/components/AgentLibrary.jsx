@@ -15,18 +15,17 @@ const agents = [
 
 export default function AgentLibrary() {
   return (
-    <section className="bg-brand-purple py-16 lg:py-20">
+    <section className="bg-brand-purple py-12 sm:py-16 lg:py-20">
       <div className="container-main">
-        {/* Header */}
-        <div className="text-center mb-10 lg:mb-12">
-          <h2 className="text-[32px] lg:text-[38px] font-extrabold text-white leading-tight">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="section-heading text-white">
             The Prebuilt Agent Library
           </h2>
-          <p className="text-[17px] mt-3">
+          <p className="text-[15px] sm:text-[17px] mt-3">
             <span className="text-white font-medium">12 starter agents. </span>
             <span className="text-[#F472B6] italic font-semibold">Endless possibilities.</span>
           </p>
-          <p className="text-white/80 text-[14px] mt-5 max-w-[680px] mx-auto leading-relaxed">
+          <p className="text-white/80 text-[13px] sm:text-[14px] mt-4 sm:mt-5 max-w-[680px] mx-auto leading-relaxed px-2">
             Every agent is designed by educators and AI experts, pre-tested for age-appropriate content,
             and ready for students to customise. Pick one that matches your interest – or remix several
             to create something entirely new.
@@ -52,8 +51,8 @@ export default function AgentLibrary() {
         </div>
 
         {/* Agent Builder CTA */}
-        <div className="mt-10 lg:mt-12 bg-[#1E1245] rounded-2xl p-6 lg:p-8 flex flex-col sm:flex-row items-center gap-6 lg:gap-8">
-          <div className="flex-shrink-0 w-[140px] h-[120px] flex items-center justify-center">
+        <div className="mt-8 sm:mt-10 lg:mt-12 bg-[#1E1245] rounded-2xl p-5 sm:p-6 lg:p-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 lg:gap-8 text-center sm:text-left">
+          <div className="flex-shrink-0 w-[100px] h-[90px] sm:w-[140px] sm:h-[120px] flex items-center justify-center">
             <img
               src="/agent-robot.png"
               alt="AI robot"
@@ -61,7 +60,7 @@ export default function AgentLibrary() {
             />
           </div>
           <div>
-            <p className="text-white font-bold text-[18px] lg:text-[20px] mb-2">
+            <p className="text-white font-bold text-[16px] sm:text-[18px] lg:text-[20px] mb-2">
               Can&apos;t find the agent you want?
             </p>
             <p className="text-white/70 text-[14px] leading-relaxed">

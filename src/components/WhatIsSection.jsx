@@ -36,43 +36,40 @@ const infoCards = [
 
 export default function WhatIsSection() {
   return (
-    <section className="bg-white py-10 lg:py-14">
+    <section className="bg-white py-8 sm:py-10 lg:py-14">
       <div className="container-main">
-        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-[20px] shadow-[0_2px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col lg:flex-row items-center">
-          {/* Left — student image */}
-          <div className="relative w-full lg:w-[42%] flex-shrink-0 h-[300px] lg:h-[380px] overflow-hidden bg-[#FAFAFA] flex items-end justify-center lg:justify-start">
+        <div className="bg-[#FAFAFA] border border-[#EBEBEB] rounded-2xl sm:rounded-[20px] shadow-[0_2px_20px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col lg:flex-row items-center">
+          <div className="relative w-full lg:w-[42%] flex-shrink-0 h-[220px] sm:h-[280px] lg:h-[380px] overflow-hidden bg-[#FAFAFA] flex items-end justify-center">
             <img
               src="/what-is-student.png"
               alt="Student using laptop in AI Playground"
-              className="h-full w-auto max-w-none object-contain object-bottom lg:object-left-bottom"
+              className="h-full w-auto max-w-[80%] sm:max-w-none object-contain object-bottom"
             />
           </div>
 
-          {/* Right — content */}
-          <div className="flex-1 px-6 py-8 lg:px-10 lg:py-10 flex flex-col justify-center">
-            <h2 className="text-[32px] lg:text-[36px] font-extrabold text-[#111827] leading-tight mb-5">
+          <div className="flex-1 px-5 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10 flex flex-col justify-center w-full">
+            <h2 className="section-heading text-[#111827] mb-4 sm:mb-5 text-center lg:text-left">
               What is an{' '}
               <span className="text-brand-purple">AI Playground?</span>
             </h2>
 
-            <p className="text-[14px] text-[#4B5563] leading-[1.75] mb-4">
+            <p className="text-[13px] sm:text-[14px] text-[#4B5563] leading-[1.75] mb-3 sm:mb-4 text-center lg:text-left">
               Think of it as a creative workshop for AI – but without the complexity. Students explore
               a library of ready-made AI agents (mini-assistants designed for specific interests),
               customise them to their voice and style, and share what they create with friends,
               classmates, and teachers.
             </p>
 
-            <p className="text-[14px] text-[#4B5563] leading-[1.75] mb-8">
+            <p className="text-[13px] sm:text-[14px] text-[#4B5563] leading-[1.75] mb-6 sm:mb-8 text-center lg:text-left">
               No coding. No setup. No overwhelm. Just pick, tweak, build, share – and discover what AI
               can do when you&apos;re the one in charge.
             </p>
 
-            {/* Info cards */}
-            <div className="flex flex-wrap gap-3 lg:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {infoCards.map(({ label, value, labelColor, iconBg, icon }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3.5 shadow-[0_1px_6px_rgba(0,0,0,0.06)] flex-1 min-w-[170px] lg:min-w-0"
+                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3.5 shadow-[0_1px_6px_rgba(0,0,0,0.06)]"
                 >
                   <div className={`w-9 h-9 ${iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                     {icon}

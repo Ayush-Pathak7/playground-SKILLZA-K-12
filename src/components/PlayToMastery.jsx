@@ -39,10 +39,10 @@ const stages = [
 
 export default function PlayToMastery() {
   return (
-    <section className="bg-[#05052D] py-16 lg:py-20">
+    <section className="bg-[#05052D] py-12 sm:py-16 lg:py-20">
       <div className="container-main">
-        <div className="text-center mb-14 lg:mb-16">
-          <h2 className="text-[32px] lg:text-[38px] font-extrabold text-white leading-tight">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+          <h2 className="section-heading text-white">
             From Play to Mastery
           </h2>
           <p className="text-white/70 text-[15px] mt-3 font-medium">
@@ -63,10 +63,10 @@ export default function PlayToMastery() {
               <div key={stage.title} className="flex flex-col items-center text-center">
                 {/* Glowing orb */}
                 <div
-                  className={`w-[140px] h-[140px] rounded-full bg-gradient-to-br ${stage.glow} ring-2 ${stage.ring} flex items-center justify-center mb-5 relative z-10 shadow-[0_0_40px_rgba(99,102,241,0.3)]`}
+                  className={`w-[110px] h-[110px] sm:w-[140px] sm:h-[140px] rounded-full bg-gradient-to-br ${stage.glow} ring-2 ${stage.ring} flex items-center justify-center mb-4 sm:mb-5 relative z-10 shadow-[0_0_40px_rgba(99,102,241,0.3)]`}
                 >
                   {stage.image ? (
-                    <img src={stage.image} alt={stage.title} className="w-[80px] h-[80px] object-contain" />
+                    <img src={stage.image} alt={stage.title} className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-contain" />
                   ) : null}
                 </div>
 

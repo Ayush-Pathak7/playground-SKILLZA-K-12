@@ -29,31 +29,30 @@ function CheckIcon() {
 
 export default function SafeByDesign() {
   return (
-    <section className="bg-[#FAFAFA] py-16 lg:py-20">
+    <section className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-20">
       <div className="container-main">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 mb-10 lg:mb-12">
-          {/* Left */}
-          <div className="flex-1 lg:max-w-[480px]">
-            <h2 className="text-[32px] lg:text-[38px] font-extrabold text-[#111827] leading-tight mb-4">
+        <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-10 lg:gap-16 mb-8 sm:mb-10 lg:mb-12">
+          <div className="flex-1 w-full lg:max-w-[480px] text-center lg:text-left">
+            <h2 className="section-heading text-[#111827] mb-3 sm:mb-4">
               Safe by Design.
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               Transparent by Default.
             </h2>
-            <p className="text-[#6B7280] text-[14px] mb-8 leading-relaxed">
+            <p className="text-[#6B7280] text-[13px] sm:text-[14px] mb-6 sm:mb-8 leading-relaxed">
               Because &apos;AI for kids&apos; should mean safety first – not safety eventually.
             </p>
 
-            <div className="relative">
+            <div className="relative flex justify-center lg:justify-start">
               <img
                 src="/safe-tablet.png"
                 alt="Admin dashboard with safety shield"
-                className="w-full max-w-[420px] object-contain"
+                className="w-full max-w-[320px] sm:max-w-[420px] object-contain"
               />
             </div>
           </div>
 
-          {/* Right — features */}
-          <div className="flex-1 max-w-[520px] space-y-7 pt-2">
+          <div className="flex-1 w-full max-w-[520px] mx-auto lg:mx-0 space-y-5 sm:space-y-7 pt-0 lg:pt-2">
             {features.map((f) => (
               <div key={f.title} className="flex items-start gap-4">
                 <CheckIcon />
@@ -67,7 +66,7 @@ export default function SafeByDesign() {
         </div>
 
         {/* Promise banner — full width */}
-        <div className="bg-[#3B82F6] rounded-2xl px-8 py-7 text-center">
+        <div className="bg-[#3B82F6] rounded-xl sm:rounded-2xl px-5 sm:px-8 py-6 sm:py-7 text-center">
           <p className="text-white font-bold text-[16px] mb-2">Our Promise to Parents</p>
           <p className="text-white/90 text-[14px] leading-relaxed max-w-[720px] mx-auto">
             If our Playground wouldn&apos;t feel right for our own children, it doesn&apos;t belong on your
